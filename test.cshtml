@@ -1,0 +1,30 @@
+﻿
+@{
+    ViewBag.Title = "test";
+}
+
+<h2>test</h2>
+<form action="/One_A/test" method="post">
+    <input type="tel" name="start" value="" />
+    <br />
+    <input type="tel" name="end" value="" />
+    <br />
+    <button type="submit">Submit</button>
+</form>
+@if (ViewBag.st != null && ViewBag.en != null)
+{
+    int start = ViewBag.st;
+    int end = ViewBag.en;
+
+    if (start <= end)
+    {
+        for (int i = start; i <= end; i++)
+        {
+            <h1>@i</h1>
+        }
+    }
+    else
+    {
+        <p>Start value must be less than or equal to End value.</p>
+    }
+}
